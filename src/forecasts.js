@@ -10,21 +10,13 @@ class Forecasts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
             days: [],
-
             city: "",
-
             icons: [],
-
             currentCity: null,
-
             country: "",
-
             city: "",
-
             time: ""
-
         }
         this.takeCity = this.takeCity.bind(this);
         this.changeCity = this.changeCity.bind(this);
@@ -32,7 +24,7 @@ class Forecasts extends React.Component {
     }
 
 
-
+    // take user input for city and country and store in state
     takeCity(e) {
         this.setState({
             city: e.target.value
@@ -44,29 +36,27 @@ class Forecasts extends React.Component {
             country: e.target.value
         });
     }
-
+    // store current time and city when user searches so that these are displayed alongside the weather data
     changeCity() {
         let date = new Date();
         let hours = date.getHours();
         let minutes = date.getMinutes();
-
-
         let currentCity = this.state.city + ", " + this.state.country;
         this.setState({
             currentCity: currentCity,
             city: "",
             time: hours + " : " + minutes
         })
+        // if a user has already searched, clear these arrays that contain the forecast data before searching again     
         if (this.state.days.length > 0) {
             this.setState({
-
                 days: [],
                 icons: [],
-
-
             })
         }
-
+        // get forecast data,  which is for every three hours, so divide the current hour by 3 to get the approximate current
+        // forecast, then add 8 to get the forecast for the same time tomorrow, and so on for a total 5 days.
+         
         fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + this.state.city + "," + this.state.country + "&appid=25132f7360c9f74cfe06ebf5ced148ff")
             .then(res => res.json())
             .then(data => {
@@ -93,14 +83,13 @@ class Forecasts extends React.Component {
             })
 
     }
-    // there is a forecast every three hours for the next 5 days, 40 in total. So divide current hour by 3 to get the nearest one, then add 8 to 
-    // get the forecast for the same time tomorrow
+    
 
 
 
     render() {
 
-
+        // only render once all forecast data, and current time and current city are ready to be used.
         if (this.state.days.length === 5 && this.state.currentCity && this.state.time) {
 
             return (
