@@ -1,9 +1,9 @@
 
 import React from "react";
 import Forecast from "./forecast"
-import Button from "react-bootstrap/Button";
+
 import Form from "react-bootstrap/Form";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 
 class Forecasts extends React.Component {
 
@@ -108,7 +108,7 @@ class Forecasts extends React.Component {
                                     <Form.Control value={this.state.country} onChange={this.takeCountry} placeholder="2 digit country code eg. us, uk" />
                                 </Col>
                                 <Col>
-                                    <Button variant="Primary" onClick={this.changeCity} >Search </Button>
+                                    <Button variant="outline-secondary" block onClick={this.changeCity} >Search </Button>
                                 </Col>
                             </Row>
                         </Form>
@@ -152,7 +152,7 @@ class Forecasts extends React.Component {
                                 <Form.Control value={this.state.country} onChange={this.takeCountry} placeholder="2 digit country code eg. us, uk" />
                             </Col>
                             <Col>
-                                <Button variant="Primary" onClick={this.changeCity} >Search </Button>
+                                <Button variant="outline-secondary" block onClick={this.changeCity} >Search </Button>
                             </Col>
                         </Row>
                     </Form>

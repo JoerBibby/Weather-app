@@ -11,7 +11,8 @@
 }
 
 .forecast {
-  border-style: solid;
+  background-color: rgb(221, 253, 255);
+  border-style: ridge;
   border-color: black;
   width: fit-content;
   flex-direction: row;
@@ -19,7 +20,7 @@
 }
 
 .header {
-  width: 60%;
+  width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
   margin: auto;
