@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+.forecasts {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: auto;
+  margin-top: 2em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.forecast {
+  border-style: solid;
+  border-color: black;
+  width: fit-content;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.header {
+  width: 60%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+  background-color: rgb(218, 248, 250);
+  font-size: larger;
+  font-family:'Times New Roman', Times, serif;
+}
+
+h3 {
+  color: grey;
+}
+
+.day {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.temp {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.date {
+  color: grey;
+  font-weight: bold;
+}
+
+.weather {
+  color: grey;
+  font-weight: bold;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
